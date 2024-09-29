@@ -46,3 +46,89 @@ function doublePoint(point: Point): Point {
 
 type MyNum = number;
 let age: MyNum = 20;
+
+// NESTED OBJECTS
+type Song = {
+  title: string;
+  artist: string;
+  numStreams: number;
+  credits: {
+    producer: string;
+    writer: string;
+  };
+};
+
+function calculatePayout(song: Song): number {
+  return song.numStreams * 0.0033;
+}
+
+function printSong(song: Song): void {
+  console.log(`${song.title} - ${song.artist}`);
+}
+
+const mySong: Song = {
+  title: "song 1",
+  artist: "artist1",
+  numStreams: 121212,
+  credits: {
+    producer: "Phil",
+    writer: "Alex North",
+  },
+};
+
+const earnings: number = calculatePayout(mySong);
+printSong(mySong);
+
+console.log(earnings);
+
+// Optional properties -> ?
+type Point4 = {
+  x: number;
+  y: number;
+  z?: number;
+};
+
+const mypt2: Point4 = { x: 1, y: 2 };
+
+// READONLY PROPERTIES
+type User = {
+  readonly id: number; //cannot be modified
+  userName: String;
+};
+
+const user1: User = {
+  id: 1234,
+  userName: "Gru",
+};
+
+// INTERSECTION OF TYPES -> &
+type Circle = {
+  radius: number;
+};
+
+type Colorful = {
+  color: string;
+};
+
+type ColorfulCircle = Circle & Colorful;
+
+const happyFace: ColorfulCircle = {
+  radius: 4,
+  color: "Yellow",
+};
+
+type Cat = {
+  numLives: number;
+};
+
+type Dog = {
+  breed: string;
+};
+
+type CatDog = Cat & Dog & { age: number };
+
+const christy: CatDog = {
+  numLives: 7,
+  breed: "Huskey",
+  age: 9,
+};
