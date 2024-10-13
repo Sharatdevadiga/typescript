@@ -98,14 +98,14 @@ interface Video {
   resolution: String;
 }
 
-class VlidePlaylist {
-  public videos: Video[] = [];
-}
+// class VlidePlaylist {
+//   public videos: Video[] = [];
+// }
 
-class SongsPlaylist {
-  public songs: Song[] = [];
-}
-
+// class SongsPlaylist {
+//   public songs: Song[] = [];
+// }
+// instead of above two classes, we can have a single generic class
 class Playlist<T> {
   public queue: T[] = [];
   add(el: T) {

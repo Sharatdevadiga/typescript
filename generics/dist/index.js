@@ -50,16 +50,13 @@ function makeEmptyList() {
 const nums5 = makeEmptyList();
 nums2.push(2);
 const bools = makeEmptyList();
-class VlidePlaylist {
-    constructor() {
-        this.videos = [];
-    }
-}
-class SongsPlaylist {
-    constructor() {
-        this.songs = [];
-    }
-}
+// class VlidePlaylist {
+//   public videos: Video[] = [];
+// }
+// class SongsPlaylist {
+//   public songs: Song[] = [];
+// }
+// instead of above two classes, we can have a single generic class
 class Playlist {
     constructor() {
         this.queue = [];
